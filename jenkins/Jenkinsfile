@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "yourdockerhubusername/devops-app"
+        DOCKER_IMAGE = "pawanpatd/devops-app"
     }
 
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/yourusername/devops-cicd-pipeline-project.git'
+                git 'https://github.com/pati-dar/devops-cicd-pipeline-project.git'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
         stage('Push to DockerHub') {
             steps {
                 withCredentials([string(credentialsId: 'docker-pass', variable: 'PASS')]) {
-                    sh 'docker login -u yourdockerhubusername -p $PASS'
+                    sh 'docker login -u pawanpatd -p $PASS'
                     sh 'docker push $DOCKER_IMAGE'
                 }
             }
