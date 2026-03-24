@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: devops-container
-        image: yourdockerhubusername/devops-app:latest
+        image: pawanpatd/devops-app:latest
         ports:
         - containerPort: 80
